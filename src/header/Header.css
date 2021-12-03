@@ -1,22 +1,12 @@
-.header {
-    display: flex;
-    flex-direction: column;
-    height: 80vh;
-    max-height: 800px;
-    min-height: 400px;
-    background-color: #eee;
-}
-
 .top-bar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     height: 40px;
     padding: 0 20px;
     background-color: #fff;
 }
 
-.logo {
-    width: 32px;
-    height: 32px;
+.title {
+    color: blue;
 }

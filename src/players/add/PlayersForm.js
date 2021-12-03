@@ -36,7 +36,7 @@ const PlayersForm = () => {
 
     return (
         <>
-            <h2>Players Form</h2>
+            <h2 className="titlePlayersForm">Players Form</h2>
             <form className="form-Players" onSubmit={ handleSubmit(onSubmit) }>
                 <div className="field">
                     <label>Name: </label>
