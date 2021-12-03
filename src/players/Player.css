@@ -1,7 +1,7 @@
 .player {
-    display: flex;
-    width: 50%;
-    border: 1px blue solid;
+    display: grid;
+    grid-template-columns: 25% 25% 50%;
+    grid-template-rows: auto;
     margin-bottom: 5px;
 }
 

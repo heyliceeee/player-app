@@ -3,12 +3,22 @@ import './Players.css';
 import Config from '../config';
 import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router';
+import PlayersForm from './add/PlayersForm';
+import { Link } from 'react-router-dom';
 
 
 const Players = () => {
 
     const [loading, setLoading] = useState(true);
     const [players, setPlayers] = useState([]);
+    const [showForm, setShowForm] = useState(false);
+
+    const onClickShowForm = () => {
+        setShowForm(!showForm);
+    }
+
+    //esta msg irá aparecer dentro do btn
+    const showFormMessage = showForm ? 'Hide Form' : 'Show Form';
 
     useEffect(() => {
         fetch('/team/players', {
@@ -22,7 +32,7 @@ const Players = () => {
 
             if(auth){
                 setLoading(false);
-                setPlayers(response);
+                setPlayers(players);
             }
         });
 
@@ -41,10 +51,16 @@ const Players = () => {
 
     return (
         <div className="players">
+            <div className='links'>
+                <Link to='/'>HomePage</Link>
+                <button className='buttons' onClick={ onClickShowForm }>{ showFormMessage }</button>
+            </div>
+
             <label>PLAYERS: </label>
-            <ul>
-                { players.map((player) => <Player key={ player._id } { ...player }></Player>) }
-            </ul>
+            <div className='player-container'>{ players.map((player) => <Player key={ player._id } { ...player }></Player>) }</div>
+
+
+            { showForm && <PlayersForm></PlayersForm> }
         </div>
     )
 }
