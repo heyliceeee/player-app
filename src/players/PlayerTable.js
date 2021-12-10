@@ -1,7 +1,7 @@
-import './Player.css';
+import './PlayerTable.css';
 
 
-const Player = (props) => {
+const PlayerTable = (props) => {
 
     const renderHobbies = (hobbies) => {
         return hobbies.map((hobbie) => {
@@ -29,4 +29,4 @@ const Player = (props) => {
 }
 
 
-export default Player;
+export default PlayerTable;

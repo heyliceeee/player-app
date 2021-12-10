@@ -1,4 +1,4 @@
-import Player from './Player';
+import Player from './PlayerTable';
 import './Players.css';
 import Config from '../config';
 import { useEffect, useState } from 'react';
