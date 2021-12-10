@@ -1,12 +1,12 @@
 import './PlayerTable.css';
-import React, { useState, useEffect } from 'react';
 import Config from '../config';
 import { Table } from 'antd';
+import { useEffect, useState } from 'react';
+import React from 'react';
 
 
 const PlayerTable = (props) => {
 
-    const { players, pagination } = data;
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState({
         players: [],
@@ -45,6 +45,7 @@ const PlayerTable = (props) => {
         }, 
     ];
 
+    const { players, pagination } = data;
 
     const fetchApi = (pageSize, current) => {
         const url = '/team/players?' + new URLSearchParams({
@@ -94,6 +95,8 @@ const PlayerTable = (props) => {
         fetchApi(pagination.pageSize, pagination.current)
     };
 
+
+    
 
     return (
         <Table>
