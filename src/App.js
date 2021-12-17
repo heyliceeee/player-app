@@ -13,11 +13,11 @@ function App() {
       <Header></Header>
       <main>
         <Routes>
-          <Route path='/' element={ <HomePage></HomePage> }></Route>
+          <Route path='/' element={ <HomePage/> }></Route>
 
-          <Route path='/login' element={ <LoginForm></LoginForm> }></Route>
+          <Route path='/login' element={ <LoginForm/>}></Route>
 
-          <Route path='/players' element={ <Players></Players> }></Route>
+          <Route path='/players' element={ <Players/> }></Route>
         </Routes>
       </main>
     </div>

@@ -37,7 +37,11 @@ const LoginForm = () => {
     
 
     if(loginSuccess){
-        return <Navigate to='/players'></Navigate>
+
+        console.log("navigate players"); 
+
+        return <Navigate to='/players'/>
+
     }
 
 

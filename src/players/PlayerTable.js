@@ -1,5 +1,4 @@
 import './PlayerTable.css';
-import Config from '../config';
 import { Table } from 'antd';
 import { useEffect, useState } from 'react';
 import React from 'react';
@@ -55,7 +54,7 @@ const PlayerTable = (props) => {
 
 
         fetch(url, {
-            headers: { 'Accept': 'application/json', 'x-access-token': Config.token }
+            headers: { 'Accept': 'application/json' }
         })
 
         .then((response) => response.json())
@@ -88,7 +87,7 @@ const PlayerTable = (props) => {
                 pageSize: 10
             }
         });
-    }, []);
+    }, [])
 
 
     const handleTableChange = (pagination) => {
@@ -99,14 +98,18 @@ const PlayerTable = (props) => {
     
 
     return (
+        <>
+        <h1>TABELA DE PLAYERS</h1>
+
         <Table>
-            columns = { columns }
-            rowKey = { record => record._id }
-            dataSource = { players }
-            pagination = { pagination }
-            loading = { loading }
-            onChange = { handleTableChange }
+            columns = {columns}
+            rowKey = {record => record._id}
+            dataSource = {players}
+            pagination = {pagination}
+            loading = {loading}
+            onChange = {handleTableChange}
         </Table>
+        </>
     )
 }
 
